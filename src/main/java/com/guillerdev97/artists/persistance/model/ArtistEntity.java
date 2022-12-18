@@ -14,7 +14,7 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = false)
 @AllArgsConstructor
 @NoArgsConstructor
-public class Artist extends HiddenData {
+public class ArtistEntity extends HiddenData {
     private static final long serialVersionUID = 7023595111032243276L;
 
     @Id
