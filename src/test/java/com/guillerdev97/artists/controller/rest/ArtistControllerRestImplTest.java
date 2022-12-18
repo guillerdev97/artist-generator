@@ -1,9 +1,11 @@
-package com.guillerdev97.artists.controller.rest.impl;
+package com.guillerdev97.artists.controller.rest;
 
+import com.guillerdev97.artists.controller.rest.impl.ArtistControllerRestImpl;
 import com.guillerdev97.artists.controller.rest.mapper.ArtistRestMapper;
 import com.guillerdev97.artists.controller.rest.rest.ArtistRest;
 import com.guillerdev97.artists.service.ArtistService;
 import com.guillerdev97.artists.service.dto.ArtistDto;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,7 +17,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Collections;
 import java.util.List;
-import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
 class ArtistControllerRestImplTest {
@@ -58,8 +59,8 @@ class ArtistControllerRestImplTest {
         List<ArtistRest> response = artistControllerRestImpl.getAllArtists();
 
         // assertions
-        assertNotNull(response);
-        assertEquals(1, response.size());
-        assertEquals(1L, response.get(0).getId());
+        Assertions.assertNotNull(response);
+        Assertions.assertEquals(1, response.size());
+        Assertions.assertEquals(1L, response.get(0).getId());
     }
 }
