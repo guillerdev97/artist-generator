@@ -31,7 +31,4 @@ public class ArtistEntity extends HiddenData {
 
     @Column(name = "musical_genre")
     private String genre;
-
-    @Column(name = "awards")
-    private List<String> awards;
 }

@@ -21,17 +21,11 @@ public class ArtistGeneratorApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		List<String> awardsList = new ArrayList<>();
-		awardsList.add("Latin music");
-		awardsList.add("Europa FM");
-		awardsList.add("Kiss FM");
-
 		ArtistEntity artist01 = ArtistEntity.builder()
 				.name("Manuel Carrasco")
 				.artisticName("Manuel Carrasco")
 				.age(34)
 				.genre("Pop")
-				.awards(awardsList)
 				.build();
 
 		ArtistEntity artist02 = new ArtistEntity(
@@ -39,8 +33,7 @@ public class ArtistGeneratorApplication implements CommandLineRunner {
 				"Pablo López",
 				"Pablo López",
 				30,
-				"Pop",
-				awardsList
+				"Pop"
 		);
 
 		ArtistEntity artist03 = ArtistEntity.builder()
@@ -48,7 +41,6 @@ public class ArtistGeneratorApplication implements CommandLineRunner {
 				.artisticName("Rosalía")
 				.age(29)
 				.genre("Latino")
-				.awards(awardsList)
 				.build();
 
 		artistRepository.save(artist01);

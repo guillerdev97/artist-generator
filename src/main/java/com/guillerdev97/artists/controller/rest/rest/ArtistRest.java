@@ -28,7 +28,4 @@ public class ArtistRest implements Serializable {
 
     @JsonProperty(value = "genre")
     private String genre;
-
-    @JsonProperty(value = "awards")
-    private List<String> awards;
 }

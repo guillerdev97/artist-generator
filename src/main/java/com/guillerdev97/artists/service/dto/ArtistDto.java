@@ -22,6 +22,4 @@ public class ArtistDto implements Serializable {
     private Integer age;
 
     private String genre;
-
-    private List<String> awards;
 }
