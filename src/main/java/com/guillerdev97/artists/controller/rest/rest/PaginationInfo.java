@@ -10,6 +10,8 @@ import java.io.Serializable;
 public class PaginationInfo implements Serializable {
     private static final long serialVersionUID = -6277467892675718617L;
 
+    private Integer currentPage;
+
     private Integer totalPages;
 
     private Integer pageSize;
