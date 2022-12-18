@@ -1,3 +1,3 @@
-# School Management System
+# Music Artists Generator
 
-This is an api rest to build a management system using Spring Boot.
+This is an api rest to build a generator of music artists.
