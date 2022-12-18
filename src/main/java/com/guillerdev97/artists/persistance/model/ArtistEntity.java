@@ -1,9 +1,6 @@
 package com.guillerdev97.artists.persistance.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
@@ -12,6 +9,7 @@ import java.util.List;
 @Table(name = "artists")
 @Data
 @EqualsAndHashCode(callSuper = false)
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class ArtistEntity extends HiddenData {
