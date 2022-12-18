@@ -1,0 +1,49 @@
+# Server configuration
+server:
+  port: 8080
+  servlet.context-path: /music/v1
+
+# Application configuration
+spring:
+  application:
+    name: ArtistGenerator
+    version: 1.0
+
+# MySQL configuration
+  datasource:
+    url: jdbc:mysql://localhost:3306/music?serverTimezone=UTC
+    username: root
+    password: Gg28112022
+  jpa:
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
+    properties.hibernate.show-sql: true
+    open-in-view: false
+    hibernate:
+      ddl-auto: create-drop
+
+# Endpoints management
+management:
+  endpoints:
+    web:
+      exposure: info, health
+
+# Application
+SchoolManagement:
+  resource:
+    version: /v1
+    endpoint1: {}
+    endpoint2: {}
+  error:
+    codes:
+      400: "Generic Bad Request Error"
+      400-01: "First Custom Bad Request Error"
+      404: "Generic Not Found Error"
+      404-01: "First Custom Not Found Error"
+      404-02: "First Custom Not Found Error"
+      500: "Generic Internal Error"
+
+# Api documentation
+springdoc:
+  api-docs:
+    enabled: true
+  paths-to-match: /artist/**
