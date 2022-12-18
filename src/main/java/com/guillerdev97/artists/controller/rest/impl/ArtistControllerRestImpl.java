@@ -4,7 +4,7 @@ import com.guillerdev97.artists.controller.rest.ArtistControllerRest;
 import com.guillerdev97.artists.controller.rest.mapper.ArtistRestMapper;
 import com.guillerdev97.artists.controller.rest.rest.ArtistRest;
 import com.guillerdev97.artists.controller.rest.rest.Pagination;
-import com.guillerdev97.artists.controller.rest.rest.PaginationInfo;
+import com.guillerdev97.artists.controller.rest.rest.PaginationDetails;
 import com.guillerdev97.artists.service.ArtistService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -27,8 +27,8 @@ public class ArtistControllerRestImpl implements ArtistControllerRest {
        Page<ArtistRest> restPage = artistService.getAllArtists(pageable).map(artistRestMapper::mapToRest);
 
        return new Pagination<>(
-               restPage.getContent().toArray(ArtistRest[]::new),
-               new PaginationInfo(restPage.getNumber(),
+               restPage.getContent().toArray(new ArtistRest[]{}),
+               new PaginationDetails(restPage.getNumber(),
                        pageable.getPageSize(),
                        restPage.getTotalPages())
        );
