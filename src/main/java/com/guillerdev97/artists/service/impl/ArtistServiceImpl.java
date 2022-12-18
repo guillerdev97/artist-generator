@@ -5,6 +5,8 @@ import com.guillerdev97.artists.persistance.repository.ArtistRepository;
 import com.guillerdev97.artists.service.ArtistService;
 import com.guillerdev97.artists.service.dto.ArtistDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,7 +20,7 @@ public class ArtistServiceImpl implements ArtistService {
     private final ArtistEntityMapper artistEntityMapper;
 
     @Override
-    public List<ArtistDto> getAllArtists() {
-        return artistRepository.findAll().stream().map(artistEntityMapper::mapToDto).collect(Collectors.toList());
+    public Page<ArtistDto> getAllArtists(Pageable pageable) {
+        return artistRepository.findAll(pageable).map(artistEntityMapper::mapToDto);
     }
 }
