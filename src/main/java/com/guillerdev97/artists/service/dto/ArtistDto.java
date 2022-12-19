@@ -1,11 +1,11 @@
 package com.guillerdev97.artists.service.dto;
 
+import com.guillerdev97.artists.persistance.model.GenreEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.util.List;
 
 @Data
 @Builder
@@ -21,5 +21,5 @@ public class ArtistDto implements Serializable {
 
     private Integer age;
 
-    private String genre;
+    private GenreEntity genre;
 }

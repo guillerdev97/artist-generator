@@ -3,7 +3,6 @@ package com.guillerdev97.artists.persistance.model;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "artists")
@@ -29,6 +28,7 @@ public class ArtistEntity extends HiddenData {
     @Column(name = "age")
     private Integer age;
 
-    @Column(name = "musical_genre")
-    private String genre;
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "genre_id")
+    private GenreEntity genre;
 }

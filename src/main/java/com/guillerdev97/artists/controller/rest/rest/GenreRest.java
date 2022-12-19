@@ -12,21 +12,12 @@ import java.io.Serializable;
 @Builder
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ArtistRest implements Serializable {
-    private static final long serialVersionUID = -8929646420157473763L;
+public class GenreRest implements Serializable {
+    private static final long serialVersionUID = 5963452837006644092L;
 
-    @JsonProperty(value = "id")
+    @JsonProperty("id")
     private Long id;
 
-    @JsonProperty(value = "name")
+    @JsonProperty("name")
     private String name;
-
-    @JsonProperty(value = "artistic_name")
-    private String artisticName;
-
-    @JsonProperty(value = "age")
-    private Integer age;
-
-    @JsonProperty(value = "genre")
-    private String genre;
 }
